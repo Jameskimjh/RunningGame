@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) 
         {
-            return;
+            return; // 플레이어가 살아있을 경우에만 해당된다.
         }
 
         if(Input.GetMouseButtonDown(0)&&jumpCount < 2)
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
             playerRigidbody.velocity = Vector2.zero;
             playerRigidbody.AddForce(new Vector2(0, jumpForce));
             playerAudio.Play();
+            
         }
         
         else if(Input.GetMouseButtonUp(0)&& playerRigidbody.velocity.y > 0) 
